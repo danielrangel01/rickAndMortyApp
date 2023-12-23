@@ -22,6 +22,7 @@ export default function App() {
           options={{
             headerTintColor: "white",
             headerStyle: { backgroundColor: "tomato" },
+            title: "Rick and Morty",
           }}
         />
         <Stack.Screen
