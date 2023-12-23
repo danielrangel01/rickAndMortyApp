@@ -1,7 +1,7 @@
-import { View, Text, Button } from "react-native";
+import { View, Text } from "react-native";
 import React from "react";
 
-export default function Episodio({ route, navigation }) {
+export default function Localizacion({ route, navigation }) {
   const { name } = route.params;
   return (
     <View>

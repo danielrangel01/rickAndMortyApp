@@ -1,10 +1,18 @@
 import { View, Text, Button } from "react-native";
-import React from "react";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import Episodios from "./Episodios";
+import Localizaciones from "./Localizaciones";
 
-export default function Home() {
+export default function Home({ navigation }) {
+  const Tab = createMaterialTopTabNavigator();
+
   return (
-    <View>
-      <Text>Home</Text>
-    </View>
+    <Tab.Navigator>
+      <Tab.Screen
+        name="EPISODIOS"
+        children={() => <Episodios navigation={navigation} />}
+      />
+      <Tab.Screen name="LOCALIZACIONES" component={Localizaciones} />
+    </Tab.Navigator>
   );
 }
