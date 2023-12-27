@@ -7,7 +7,12 @@ export default function Home({ navigation }) {
   const Tab = createMaterialTopTabNavigator();
 
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={{
+        tabBarStyle: { backgroundColor: "tomato" },
+        tabBarLabelStyle: { color: "#FFF"}
+      }}
+    >
       <Tab.Screen
         name="EPISODIOS"
         children={() => <Episodios navigation={navigation} />}

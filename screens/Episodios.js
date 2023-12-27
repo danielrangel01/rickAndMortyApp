@@ -16,7 +16,6 @@ export default function Episodios({ navigation }) {
       const response = await fetch("https://rickandmortyapi.com/api/episode");
       const json = await response.json();
       setEpisodies(json.results);
-      console.log(json.results);
     } catch (error) {
       console.log(error);
     }
@@ -25,7 +24,7 @@ export default function Episodios({ navigation }) {
   const getEpisodieList = async () => {
     const list = episodies.map((e) => (
       <TouchableOpacity
-        onPress={() => navigation.navigate("Episodio", { name: e.name })}
+        onPress={() => navigation.navigate("Episodio", { id: e.id })}
         key={e.id}
         style={styles.touch}
       >

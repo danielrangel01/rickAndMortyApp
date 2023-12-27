@@ -8,6 +8,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import Home from "./screens/Home";
 import Episodio from "./screens/Episodio";
+import Localizacion from "./screens/Localizacion"
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -28,6 +29,11 @@ export default function App() {
         <Stack.Screen
           name="Episodio"
           component={Episodio}
+          options={{ headerStyleInterpolator: forFade }}
+        />
+        <Stack.Screen
+          name="Localizacion"
+          component={Localizacion}
           options={{ headerStyleInterpolator: forFade }}
         />
       </Stack.Navigator>
