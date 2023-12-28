@@ -27,7 +27,7 @@ export default function Localizaciones({ navigation }) {
       <TouchableOpacity
         onPress={() => {
           try {
-            navigation.navigate("Localizacion", { id: e.name });
+            navigation.navigate("Localizacion", { id: e.id });
           } catch (error) {
             console.error("Error al navegar:", error);
           }

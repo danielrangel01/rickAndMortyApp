@@ -24,7 +24,13 @@ export default function Episodios({ navigation }) {
   const getEpisodieList = async () => {
     const list = episodies.map((e) => (
       <TouchableOpacity
-        onPress={() => navigation.navigate("Episodio", { id: e.id })}
+        onPress={() => {
+          try {
+            navigation.navigate("Episodio", { id: e.id });
+          } catch (error) {
+            console.error("Error al navegar:", error);
+          }
+        }}
         key={e.id}
         style={styles.touch}
       >
@@ -56,10 +62,10 @@ const styles = new StyleSheet.create({
 
   episode: {
     color: "#888",
-    fontSize: 12
+    fontSize: 12,
   },
   fecha: {
-    color: '#888',
-    fontSize: 14
-  }
+    color: "#888",
+    fontSize: 14,
+  },
 });
